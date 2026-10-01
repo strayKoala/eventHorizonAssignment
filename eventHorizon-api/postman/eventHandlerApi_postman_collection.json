@@ -8,7 +8,7 @@
     "variable": [
         {
             "key": "baseUrl",
-            "value": "http://localhost:6000"
+            "value": "https://eventhorizon-api-qv9y.onrender.com"
         },
         {
             "key": "token",
