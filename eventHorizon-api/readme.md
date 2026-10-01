@@ -33,6 +33,7 @@ EventHorizon is a RESTful API built with **Node.js and Express.js**. It provides
 
 # Getting Started
 
+## Deplyed render link: https://eventhorizon-api-qv9y.onrender.com
 ## 1. Prerequisites
 
 Before running the project, make sure you have installed:
