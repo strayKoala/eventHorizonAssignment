@@ -10,7 +10,7 @@ EventHorizon is a RESTful API built with **Node.js and Express.js**. It provides
 * **Joi** 
 * **bcryptjs** 
 * **JSON Web Token (JWT)** 
-* **Nodemailer** 
+* **Resend** 
 
 ---
 
@@ -52,6 +52,8 @@ npm -v
 
 ---
 
+Also register on the resend website and create an API key for sending emails
+
 
 
 ## 2. Install Dependencies
@@ -85,10 +87,7 @@ VERIFICATION_TOKEN_EXPIRES_IN_MINUTES=30
 
 BACKEND_URL=http://localhost:6000
 
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=your_email@gmail.com
-SMTP_PASS=your_email_app_password
+RESEND_API_KEY=YOUR_RESEND_API_KEY
 EMAIL_FROM=your_email@gmail.com
 ```
 
@@ -101,10 +100,6 @@ EMAIL_FROM=your_email@gmail.com
 | `JWT_SECRET`                            | Secret key used to sign JWT authentication tokens  |
 | `JWT_EXPIRES_IN`                        | How long an authentication token remains valid     |
 | `VERIFICATION_TOKEN_EXPIRES_IN_MINUTES` | How long an email verification token remains valid |
-| `SMTP_HOST`                             | SMTP server used to send emails                    |
-| `SMTP_PORT`                             | SMTP port                                          |
-| `SMTP_USER`                             | Email account used to send emails                  |
-| `SMTP_PASS`                             | Email account password/app password                |
 | `EMAIL_FROM`                            | Email address displayed as the sender              |
 
 ### Important
@@ -135,28 +130,6 @@ If MongoDB is running locally, the application should be able to connect using t
 
 ---
 
-# Email Configuration
-
-EventHorizon uses **Nodemailer** to send emails, including email verification messages.
-
-The current configuration uses Gmail's SMTP server:
-
-```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-```
-
-The email account is configured using:
-
-```env
-SMTP_USER=your_email@gmail.com
-SMTP_PASS=your_email_app_password
-EMAIL_FROM=your_email@gmail.com
-```
-
-For Gmail, use an **App Password** where required rather than putting your normal Gmail password in the project.
-
----
 
 # Running the Application
 
@@ -362,14 +335,11 @@ If the application cannot connect to MongoDB:
 Check the following variables:
 
 ```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=your_email@gmail.com
-SMTP_PASS=your_email_app_password
+RESEND_API_KEY=YOUR_RESEND_API_KEY
 EMAIL_FROM=your_email@gmail.com
 ```
 
-Make sure the email credentials are correct and that the SMTP account allows the application to send email.
+Make sure the email credentials are correct
 
 ---
 
